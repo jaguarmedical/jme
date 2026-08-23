@@ -286,8 +286,13 @@ function sendCart() {
         return;
     }
 
-    let message = "Hello Jaguar Medical, I want to order:%0A%0A";
-
+   let message =
+"Hello Jaguar Medical Equipment Team,%0A%0A" +
+"I would like to place an order for the following item(s).%0A%0A" +
+"Please confirm availability, pricing, and delivery timeline at your earliest convenience.%0A%0A" +
+"Looking forward to your response.%0A%0A" +
+"Thank you.";
+    
     cart.forEach((item, i) => {
         message += (i+1) + ". " + item + "%0A";
     });
