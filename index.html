@@ -19,7 +19,7 @@ body {
     color: #111;
 }
 
-/* NAVBAR */
+/* NAV */
 nav {
     display: flex;
     justify-content: space-between;
@@ -34,70 +34,53 @@ nav h2 {
     font-weight: 600;
 }
 
-nav a {
-    text-decoration: none;
-    color: #111;
-    margin-left: 20px;
-    font-size: 14px;
-}
-
 /* HERO */
 .hero {
-    height: 90vh;
+    height: 70vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-
     background: linear-gradient(to bottom, #f5f7fa, #ffffff);
 }
 
 .hero h1 {
-    font-size: 48px;
-    font-weight: 600;
+    font-size: 42px;
 }
 
 .hero p {
-    margin-top: 10px;
     color: #555;
-    font-size: 18px;
+    margin-top: 10px;
 }
 
 .hero button {
-    margin-top: 25px;
+    margin-top: 20px;
     padding: 12px 25px;
     border: none;
     border-radius: 25px;
     background: #0071e3;
     color: white;
-    font-size: 16px;
     cursor: pointer;
 }
 
-/* PRODUCT SECTION */
+/* PRODUCTS */
 .section {
-    padding: 60px 40px;
-    text-align: center;
-}
-
-.section h2 {
-    font-size: 32px;
-    margin-bottom: 30px;
+    padding: 50px;
 }
 
 .products {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
 }
 
 .card {
-    background: #fff;
     border-radius: 15px;
-    padding: 20px;
-    transition: 0.3s;
     box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    padding: 15px;
+    background: white;
+    transition: 0.3s;
 }
 
 .card:hover {
@@ -106,103 +89,203 @@ nav a {
 
 .card img {
     width: 100%;
-    height: 200px;
+    height: 180px;
     object-fit: cover;
     border-radius: 10px;
 }
 
 .card h3 {
-    margin-top: 15px;
+    margin-top: 10px;
 }
 
 .card p {
+    font-size: 13px;
     color: #666;
-    font-size: 14px;
+    margin: 5px 0;
 }
 
-.card button {
-    margin-top: 10px;
-    padding: 10px;
+.btn {
     width: 100%;
+    padding: 10px;
+    margin-top: 8px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
 }
 
-.buy {
-    background: #000;
+.add {
+    background: #111;
     color: white;
 }
 
-/* FOOTER */
+/* CART */
+.cart-box {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background: #111;
+    color: white;
+    padding: 15px;
+    border-radius: 12px;
+    width: 260px;
+}
+
+.cart-box button {
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: #25D366;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
 footer {
-    padding: 40px;
     text-align: center;
+    padding: 30px;
     color: #888;
-    font-size: 14px;
+    font-size: 13px;
 }
 </style>
-
 </head>
 
 <body>
 
-<!-- NAVBAR -->
 <nav>
 <h2>JAGUAR MEDICAL</h2>
-<div>
-<a href="#">Home</a>
-<a href="#">Products</a>
-<a href="#">Contact</a>
-</div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
-<h1>Precision in Sterilization</h1>
-<p>Trusted Medical Equipment for Hospitals & Labs</p>
-
-<button onclick="contact()">Contact on WhatsApp</button>
+<h1>Precision Medical Equipment</h1>
+<p>Hospital Grade Devices • Direct Supply • WhatsApp Order</p>
+<button onclick="sendCart()">Contact on WhatsApp</button>
 </section>
 
-<!-- PRODUCTS -->
 <section class="section">
-<h2>Featured Products</h2>
+<h2>Products</h2>
 
 <div class="products">
 
-<!-- PRODUCT -->
-<section class="product-grid">
+<!-- 1 -->
+<div class="card">
+<img src="https://raw.githubusercontent.com/USERNAME/REPO/main/images/bipap.jpg">
+<h3>BIPAP Machine</h3>
+<p>Respiratory support device for ICU use</p>
+<button class="btn add" onclick="addToCart('BIPAP Machine')">Add to Cart</button>
+</div>
 
-  <!-- PRODUCT CARD -->
-  <div class="product-card">
-    <img src="https://raw.githubusercontent.com/jme/REPO/main/images/product1.jpg" />
+<!-- 2 -->
+<div class="card">
+<img src="https://raw.githubusercontent.com/USERNAME/REPO/main/images/oxygen-concentrator.jpg">
+<h3>Oxygen Concentrator</h3>
+<p>Medical oxygen supply for home & hospital</p>
+<button class="btn add" onclick="addToCart('Oxygen Concentrator')">Add to Cart</button>
+</div>
 
-    <h3>Medical Item Name</h3>
-    <p>Short description of the product</p>
+<!-- 3 -->
+<div class="card">
+<img src="https://raw.githubusercontent.com/USERNAME/REPO/main/images/oxygen-cylinder.jpg">
+<h3>Oxygen Cylinder</h3>
+<p>Emergency oxygen storage system</p>
+<button class="btn add" onclick="addToCart('Oxygen Cylinder')">Add to Cart</button>
+</div>
 
-    <button onclick="openWhatsApp('Medical Item Name')">
-      Buy Now
-    </button>
-  </div>
+<!-- 4 -->
+<div class="card">
+<img src="https://raw.githubusercontent.com/USERNAME/REPO/main/images/electric-bed.jpg">
+<h3>Electric Hospital Bed</h3>
+<p>Multi-position adjustable patient bed</p>
+<button class="btn add" onclick="addToCart('Electric Hospital Bed')">Add to Cart</button>
+</div>
 
+<!-- 5 -->
+<div class="card">
+<img src="https://raw.githubusercontent.com/USERNAME/REPO/main/images/patient-monitor.jpg">
+<h3>Patient Monitor</h3>
+<p>ECG, SpO2, BP monitoring system</p>
+<button class="btn add" onclick="addToCart('Patient Monitor')">Add to Cart</button>
+</div>
+
+<!-- 6 -->
+<div class="card">
+<img src="https://raw.githubusercontent.com/USERNAME/REPO/main/images/bp-machine.jpg">
+<h3>BP Machine</h3>
+<p>Digital blood pressure device</p>
+<button class="btn add" onclick="addToCart('BP Machine')">Add to Cart</button>
+</div>
+
+<!-- 7 -->
+<div class="card">
+<img src="https://raw.githubusercontent.com/USERNAME/REPO/main/images/autoclave.jpg">
+<h3>Autoclave Machine</h3>
+<p>High-pressure sterilization system</p>
+<button class="btn add" onclick="addToCart('Autoclave Machine')">Add to Cart</button>
+</div>
+
+<!-- 8 -->
+<div class="card">
+<img src="https://raw.githubusercontent.com/USERNAME/REPO/main/images/type6-indicator.jpg">
+<h3>Type 6 Steam Indicator</h3>
+<p>Sterilization validation strip</p>
+<button class="btn add" onclick="addToCart('Type 6 Steam Indicator')">Add to Cart</button>
+</div>
+
+<!-- 9 -->
+<div class="card">
+<img src="https://raw.githubusercontent.com/USERNAME/REPO/main/images/eto-sterilizer.jpg">
+<h3>Ethylene Oxide Sterilizer</h3>
+<p>Low temperature gas sterilization unit</p>
+<button class="btn add" onclick="addToCart('Ethylene Oxide Sterilizer')">Add to Cart</button>
+</div>
+
+</div>
 </section>
 
-<!-- FOOTER -->
+<!-- CART -->
+<div class="cart-box">
+<h3>🛒 Cart</h3>
+<div id="cartList">No items</div>
+<button onclick="sendCart()">Send on WhatsApp</button>
+</div>
+
 <footer>
-© 2026 JAGUAR MEDICAL EQUIPMENTS  
-Sales & Service | Direct Supply
+© 2026 JAGUAR MEDICAL EQUIPMENTS
 </footer>
 
 <script>
 
-function contact() {
-    window.open("https://wa.me/919441430014", "_blank");
+let cart = [];
+
+function addToCart(item) {
+    cart.push(item);
+    updateCart();
 }
 
-function buyNow(product) {
-    let message = "Hello, I want to buy: " + product;
-    let url = "https://wa.me/919441430014?text=" + encodeURIComponent(message);
+function updateCart() {
+    let cartList = document.getElementById("cartList");
+
+    if(cart.length === 0){
+        cartList.innerHTML = "No items";
+    } else {
+        cartList.innerHTML = cart.map((c, i) => (i+1)+". "+c).join("<br>");
+    }
+}
+
+function sendCart() {
+    if(cart.length === 0){
+        alert("Cart is empty!");
+        return;
+    }
+
+    let message = "Hello Jaguar Medical, I want to order:%0A%0A";
+
+    cart.forEach((item, i) => {
+        message += (i+1) + ". " + item + "%0A";
+    });
+
+    let url = "https://wa.me/919441430014?text=" + message;
+
     window.open(url, "_blank");
 }
 
