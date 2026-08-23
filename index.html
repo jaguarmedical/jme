@@ -104,9 +104,10 @@ nav h2 {
     margin: 5px 0;
 }
 
+/* BUTTONS */
 .btn {
     width: 100%;
-    padding: 10px;
+    padding: 8px;
     margin-top: 8px;
     border: none;
     border-radius: 8px;
@@ -127,7 +128,7 @@ nav h2 {
     color: white;
     padding: 15px;
     border-radius: 12px;
-    width: 260px;
+    width: 270px;
 }
 
 .cart-box button {
@@ -167,84 +168,106 @@ footer {
 
 <div class="products">
 
-<!-- 1 -->
+<!-- PRODUCT TEMPLATE -->
+
 <div class="card">
 <img src="https://raw.githubusercontent.com/USERNAME/REPO/main/images/bipap.jpg">
 <h3>BIPAP Machine</h3>
 <p>Respiratory support device for ICU use</p>
-<button class="btn add" onclick="addToCart('BIPAP Machine')">Add to Cart</button>
+<div style="display:flex; gap:5px;">
+<button class="btn add" onclick="addToCart('BIPAP Machine')">+</button>
+<button class="btn add" style="background:#e74c3c;" onclick="removeFromCart('BIPAP Machine')">−</button>
+</div>
 </div>
 
-<!-- 2 -->
 <div class="card">
 <img src="https://raw.githubusercontent.com/USERNAME/REPO/main/images/oxygen-concentrator.jpg">
 <h3>Oxygen Concentrator</h3>
 <p>Medical oxygen supply for home & hospital</p>
-<button class="btn add" onclick="addToCart('Oxygen Concentrator')">Add to Cart</button>
+<div style="display:flex; gap:5px;">
+<button class="btn add" onclick="addToCart('Oxygen Concentrator')">+</button>
+<button class="btn add" style="background:#e74c3c;" onclick="removeFromCart('Oxygen Concentrator')">−</button>
+</div>
 </div>
 
-<!-- 3 -->
 <div class="card">
 <img src="https://raw.githubusercontent.com/USERNAME/REPO/main/images/oxygen-cylinder.jpg">
 <h3>Oxygen Cylinder</h3>
 <p>Emergency oxygen storage system</p>
-<button class="btn add" onclick="addToCart('Oxygen Cylinder')">Add to Cart</button>
+<div style="display:flex; gap:5px;">
+<button class="btn add" onclick="addToCart('Oxygen Cylinder')">+</button>
+<button class="btn add" style="background:#e74c3c;" onclick="removeFromCart('Oxygen Cylinder')">−</button>
+</div>
 </div>
 
-<!-- 4 -->
 <div class="card">
 <img src="https://raw.githubusercontent.com/USERNAME/REPO/main/images/electric-bed.jpg">
 <h3>Electric Hospital Bed</h3>
 <p>Multi-position adjustable patient bed</p>
-<button class="btn add" onclick="addToCart('Electric Hospital Bed')">Add to Cart</button>
+<div style="display:flex; gap:5px;">
+<button class="btn add" onclick="addToCart('Electric Hospital Bed')">+</button>
+<button class="btn add" style="background:#e74c3c;" onclick="removeFromCart('Electric Hospital Bed')">−</button>
+</div>
 </div>
 
-<!-- 5 -->
 <div class="card">
 <img src="https://raw.githubusercontent.com/USERNAME/REPO/main/images/patient-monitor.jpg">
 <h3>Patient Monitor</h3>
 <p>ECG, SpO2, BP monitoring system</p>
-<button class="btn add" onclick="addToCart('Patient Monitor')">Add to Cart</button>
+<div style="display:flex; gap:5px;">
+<button class="btn add" onclick="addToCart('Patient Monitor')">+</button>
+<button class="btn add" style="background:#e74c3c;" onclick="removeFromCart('Patient Monitor')">−</button>
+</div>
 </div>
 
-<!-- 6 -->
 <div class="card">
 <img src="https://raw.githubusercontent.com/USERNAME/REPO/main/images/bp-machine.jpg">
 <h3>BP Machine</h3>
 <p>Digital blood pressure device</p>
-<button class="btn add" onclick="addToCart('BP Machine')">Add to Cart</button>
+<div style="display:flex; gap:5px;">
+<button class="btn add" onclick="addToCart('BP Machine')">+</button>
+<button class="btn add" style="background:#e74c3c;" onclick="removeFromCart('BP Machine')">−</button>
+</div>
 </div>
 
-<!-- 7 -->
 <div class="card">
 <img src="https://raw.githubusercontent.com/USERNAME/REPO/main/images/autoclave.jpg">
 <h3>Autoclave Machine</h3>
 <p>High-pressure sterilization system</p>
-<button class="btn add" onclick="addToCart('Autoclave Machine')">Add to Cart</button>
+<div style="display:flex; gap:5px;">
+<button class="btn add" onclick="addToCart('Autoclave Machine')">+</button>
+<button class="btn add" style="background:#e74c3c;" onclick="removeFromCart('Autoclave Machine')">−</button>
+</div>
 </div>
 
-<!-- 8 -->
 <div class="card">
 <img src="https://raw.githubusercontent.com/USERNAME/REPO/main/images/type6-indicator.jpg">
 <h3>Type 6 Steam Indicator</h3>
 <p>Sterilization validation strip</p>
-<button class="btn add" onclick="addToCart('Type 6 Steam Indicator')">Add to Cart</button>
+<div style="display:flex; gap:5px;">
+<button class="btn add" onclick="addToCart('Type 6 Steam Indicator')">+</button>
+<button class="btn add" style="background:#e74c3c;" onclick="removeFromCart('Type 6 Steam Indicator')">−</button>
+</div>
 </div>
 
-<!-- 9 -->
+<div class="card">
+<img src="images/autoclave-validation-pack.jpg">
+<h3>Autoclave Validation Pack</h3>
+<p>Sterilization validation strip</p>
+<div style="display:flex; gap:5px;">
+<button class="btn add" onclick="addToCart('Autoclave Validation Pack')">+</button>
+<button class="btn add" style="background:#e74c3c;" onclick="removeFromCart('Autoclave Validation Pack')">−</button>
+</div>
+</div>    
+
 <div class="card">
 <img src="https://raw.githubusercontent.com/USERNAME/REPO/main/images/eto-sterilizer.jpg">
 <h3>Ethylene Oxide Sterilizer</h3>
 <p>Low temperature gas sterilization unit</p>
-<button class="btn add" onclick="addToCart('Ethylene Oxide Sterilizer')">Add to Cart</button>
+<div style="display:flex; gap:5px;">
+<button class="btn add" onclick="addToCart('Ethylene Oxide Sterilizer')">+</button>
+<button class="btn add" style="background:#e74c3c;" onclick="removeFromCart('Ethylene Oxide Sterilizer')">−</button>
 </div>
-
-<!-- 10 -->
-<div class="card">
-<img src="images/autoclave-validation-pack.jpg">
-<h3>Autoclave Validation Pack</h3>
-<p>Low temperature gas sterilization unit</p>
-<button class="btn add" onclick="addToCart('Autoclave Validation Pack')">Add to Cart</button>
 </div>
 
 </div>
@@ -265,37 +288,67 @@ footer {
 
 let cart = [];
 
+/* ADD */
 function addToCart(item) {
-    cart.push(item);
+    let existing = cart.find(c => c.name === item);
+
+    if(existing){
+        existing.qty++;
+    } else {
+        cart.push({name:item, qty:1});
+    }
+
     updateCart();
 }
 
+/* REMOVE */
+function removeFromCart(item) {
+    let existing = cart.find(c => c.name === item);
+
+    if(existing){
+        existing.qty--;
+
+        if(existing.qty <= 0){
+            cart = cart.filter(c => c.name !== item);
+        }
+    }
+
+    updateCart();
+}
+
+/* CART UI */
 function updateCart() {
     let cartList = document.getElementById("cartList");
 
     if(cart.length === 0){
         cartList.innerHTML = "No items";
-    } else {
-        cartList.innerHTML = cart.map((c, i) => (i+1)+". "+c).join("<br>");
+        return;
     }
+
+    cartList.innerHTML = cart.map((c,i)=>
+        `${i+1}. ${c.name} × ${c.qty}`
+    ).join("<br>");
 }
 
+/* WHATSAPP ORDER */
 function sendCart() {
+
     if(cart.length === 0){
         alert("Cart is empty!");
         return;
     }
 
-   let message =
+    let message =
 "Hello Jaguar Medical Equipment Team,%0A%0A" +
 "I would like to place an order for the following item(s).%0A%0A" +
 "Please confirm availability, pricing, and delivery timeline at your earliest convenience.%0A%0A" +
-"Looking forward to your response.%0A%0A" +
-"Thank you.";
-    
-    cart.forEach((item, i) => {
-        message += (i+1) + ". " + item + "%0A";
+"Order Details:%0A%0A";
+
+    cart.forEach((c,i)=>{
+        message += `${i+1}. ${c.name} × ${c.qty}%0A`;
     });
+
+    message += "%0AThank you.";
 
     let url = "https://wa.me/919441430014?text=" + message;
 
