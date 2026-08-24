@@ -23,15 +23,52 @@ body {
 nav {
     display: flex;
     justify-content: space-between;
-    padding: 20px 40px;
+    align-items: center;
+    padding: 15px 25px;
     position: sticky;
     top: 0;
     background: white;
     border-bottom: 1px solid #eee;
+    z-index: 1000;
 }
 
 nav h2 {
     font-weight: 600;
+}
+
+.contact-top {
+    font-size: 12px;
+    text-align: right;
+}
+
+/* MENU */
+.menu-icon {
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100%;
+    background: #111;
+    color: white;
+    padding: 30px;
+    transition: 0.3s;
+}
+
+.side-menu a {
+    display: block;
+    margin: 20px 0;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.side-menu.open {
+    right: 0;
 }
 
 /* HERO */
@@ -46,32 +83,18 @@ nav h2 {
 }
 
 .hero h1 {
-    font-size: 42px;
+    font-size: 40px;
 }
 
-.hero p {
-    color: #555;
-    margin-top: 10px;
-}
-
-.hero button {
-    margin-top: 20px;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 25px;
-    background: #0071e3;
-    color: white;
-    cursor: pointer;
-}
-
-/* PRODUCTS */
+/* SECTION */
 .section {
     padding: 50px;
 }
 
+/* PRODUCTS */
 .products {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
 }
 
@@ -80,44 +103,26 @@ nav h2 {
     box-shadow: 0 10px 25px rgba(0,0,0,0.05);
     padding: 15px;
     background: white;
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
 }
 
 .card img {
     width: 100%;
-    height: 180px;
+    height: 170px;
     object-fit: cover;
     border-radius: 10px;
 }
 
-.card h3 {
-    margin-top: 10px;
-}
-
-.card p {
-    font-size: 13px;
-    color: #666;
-    margin: 5px 0;
-}
-
 /* BUTTONS */
 .btn {
-    width: 100%;
+    flex: 1;
     padding: 8px;
-    margin-top: 8px;
     border: none;
-    border-radius: 8px;
+    border-radius: 6px;
     cursor: pointer;
 }
 
-.add {
-    background: #111;
-    color: white;
-}
+.add { background: #111; color: white; }
+.remove { background: #e74c3c; color: white; }
 
 /* CART */
 .cart-box {
@@ -128,7 +133,7 @@ nav h2 {
     color: white;
     padding: 15px;
     border-radius: 12px;
-    width: 270px;
+    width: 260px;
 }
 
 .cart-box button {
@@ -139,9 +144,12 @@ nav h2 {
     background: #25D366;
     color: white;
     border-radius: 8px;
-    cursor: pointer;
 }
 
+/* CONTACT */
+.contact { background: #f9f9f9; }
+
+/* FOOTER */
 footer {
     text-align: center;
     padding: 30px;
@@ -153,132 +161,96 @@ footer {
 
 <body>
 
+<!-- NAV -->
 <nav>
 <h2>JAGUAR MEDICAL</h2>
+
+
+<div class="menu-icon" onclick="toggleMenu()">☰</div>
 </nav>
 
+<!-- SIDE MENU -->
+<div class="side-menu" id="menu">
+<a href="#products" onclick="toggleMenu()">Products</a>
+<a href="#contact" onclick="toggleMenu()">Contact</a>
+</div>
+
+<!-- HERO -->
 <section class="hero">
 <h1>JAGUAR MEDICAL EQUIPMENTS</h1>
 <p>Hospital Grade Devices • Direct Supply • WhatsApp Order</p>
 </section>
 
-<section class="section">
+<!-- PRODUCTS -->
+<section class="section" id="products">
 <h2>Products</h2>
 
 <div class="products">
 
-<!-- PRODUCT TEMPLATE -->
-
 <div class="card">
-<img src="https://raw.githubusercontent.com/USERNAME/REPO/main/images/bipap.jpg">
+<img src="https://source.unsplash.com/300x200/?ventilator">
 <h3>BIPAP Machine</h3>
-<p>Respiratory support device for ICU use</p>
+<p>ICU respiratory support</p>
 <div style="display:flex; gap:5px;">
 <button class="btn add" onclick="addToCart('BIPAP Machine')">+</button>
-<button class="btn add" style="background:#e74c3c;" onclick="removeFromCart('BIPAP Machine')">−</button>
+<button class="btn remove" onclick="removeFromCart('BIPAP Machine')">−</button>
 </div>
 </div>
 
 <div class="card">
-<img src="https://raw.githubusercontent.com/USERNAME/REPO/main/images/oxygen-concentrator.jpg">
+<img src="https://source.unsplash.com/300x200/?oxygen">
 <h3>Oxygen Concentrator</h3>
-<p>Medical oxygen supply for home & hospital</p>
+<p>Medical oxygen supply</p>
 <div style="display:flex; gap:5px;">
 <button class="btn add" onclick="addToCart('Oxygen Concentrator')">+</button>
-<button class="btn add" style="background:#e74c3c;" onclick="removeFromCart('Oxygen Concentrator')">−</button>
+<button class="btn remove" onclick="removeFromCart('Oxygen Concentrator')">−</button>
 </div>
 </div>
 
 <div class="card">
-<img src="https://raw.githubusercontent.com/USERNAME/REPO/main/images/oxygen-cylinder.jpg">
-<h3>Oxygen Cylinder</h3>
-<p>Emergency oxygen storage system</p>
+<img src="https://source.unsplash.com/300x200/?hospital-bed">
+<h3>Hospital Bed</h3>
+<p>Adjustable patient bed</p>
 <div style="display:flex; gap:5px;">
-<button class="btn add" onclick="addToCart('Oxygen Cylinder')">+</button>
-<button class="btn add" style="background:#e74c3c;" onclick="removeFromCart('Oxygen Cylinder')">−</button>
-</div>
-</div>
-
-<div class="card">
-<img src="https://raw.githubusercontent.com/USERNAME/REPO/main/images/electric-bed.jpg">
-<h3>Electric Hospital Bed</h3>
-<p>Multi-position adjustable patient bed</p>
-<div style="display:flex; gap:5px;">
-<button class="btn add" onclick="addToCart('Electric Hospital Bed')">+</button>
-<button class="btn add" style="background:#e74c3c;" onclick="removeFromCart('Electric Hospital Bed')">−</button>
-</div>
-</div>
-
-<div class="card">
-<img src="https://raw.githubusercontent.com/USERNAME/REPO/main/images/patient-monitor.jpg">
-<h3>Patient Monitor</h3>
-<p>ECG, SpO2, BP monitoring system</p>
-<div style="display:flex; gap:5px;">
-<button class="btn add" onclick="addToCart('Patient Monitor')">+</button>
-<button class="btn add" style="background:#e74c3c;" onclick="removeFromCart('Patient Monitor')">−</button>
-</div>
-</div>
-
-<div class="card">
-<img src="images/BP-Machine.jpg">
-<h3>BP Machine</h3>
-<p>Digital blood pressure device</p>
-<div style="display:flex; gap:5px;">
-<button class="btn add" onclick="addToCart('BP Machine')">+</button>
-<button class="btn add" style="background:#e74c3c;" onclick="removeFromCart('BP Machine')">−</button>
-</div>
-</div>
-
-<div class="card">
-<img src="images/Autoclave-Machine.jpg">
-<h3>Autoclave Machine</h3>
-<p>High-pressure sterilization system</p>
-<div style="display:flex; gap:5px;">
-<button class="btn add" onclick="addToCart('Autoclave Machine')">+</button>
-<button class="btn add" style="background:#e74c3c;" onclick="removeFromCart('Autoclave Machine')">−</button>
-</div>
-</div>
-
-<div class="card">
-<img src="https://raw.githubusercontent.com/USERNAME/REPO/main/images/type6-indicator.jpg">
-<h3>Type 6 Steam Indicator</h3>
-<p>Sterilization validation strip</p>
-<div style="display:flex; gap:5px;">
-<button class="btn add" onclick="addToCart('Type 6 Steam Indicator')">+</button>
-<button class="btn add" style="background:#e74c3c;" onclick="removeFromCart('Type 6 Steam Indicator')">−</button>
-</div>
-</div>
-
-<div class="card">
-<img src="images/autoclave-validation-pack.jpg">
-<h3>Autoclave Validation Pack</h3>
-<p>Sterilization validation strip</p>
-<div style="display:flex; gap:5px;">
-<button class="btn add" onclick="addToCart('Autoclave Validation Pack')">+</button>
-<button class="btn add" style="background:#e74c3c;" onclick="removeFromCart('Autoclave Validation Pack')">−</button>
-</div>
-</div>    
-
-<div class="card">
-<img src="https://raw.githubusercontent.com/USERNAME/REPO/main/images/eto-sterilizer.jpg">
-<h3>Ethylene Oxide Sterilizer</h3>
-<p>Low temperature gas sterilization unit</p>
-<div style="display:flex; gap:5px;">
-<button class="btn add" onclick="addToCart('Ethylene Oxide Sterilizer')">+</button>
-<button class="btn add" style="background:#e74c3c;" onclick="removeFromCart('Ethylene Oxide Sterilizer')">−</button>
+<button class="btn add" onclick="addToCart('Hospital Bed')">+</button>
+<button class="btn remove" onclick="removeFromCart('Hospital Bed')">−</button>
 </div>
 </div>
 
 </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact" id="contact">
+<h2>Contact</h2>
+
+<p>📞 
+<a href="tel:6301065447">6301065447</a>, 
+<a href="tel:9441430014">9441430014</a>
+</p>
+
+<p>✉ 
+<a href="mailto:jaguarequipments5@gmail.com">
+jaguarequipments5@gmail.com
+</a>
+</p>
+
+<p>💬 
+<a href="https://wa.me/916301065447" target="_blank">
+WhatsApp Chat
+</a>
+</p>
+
 </section>
 
 <!-- CART -->
 <div class="cart-box">
 <h3>🛒 Cart</h3>
 <div id="cartList">No items</div>
-<button onclick="sendCart()">Send on WhatsApp</button>
+<button onclick="sendCart()">Order via WhatsApp</button>
 </div>
 
+<!-- FOOTER -->
 <footer>
 © 2026 JAGUAR MEDICAL EQUIPMENTS
 </footer>
@@ -315,7 +287,7 @@ function removeFromCart(item) {
     updateCart();
 }
 
-/* CART UI */
+/* UPDATE UI */
 function updateCart() {
     let cartList = document.getElementById("cartList");
 
@@ -329,7 +301,7 @@ function updateCart() {
     ).join("<br>");
 }
 
-/* WHATSAPP ORDER */
+/* WHATSAPP */
 function sendCart() {
 
     if(cart.length === 0){
@@ -337,22 +309,19 @@ function sendCart() {
         return;
     }
 
-    let message =
-"Hello Jaguar Medical Equipment Team,%0A%0A" +
-"I would like to place an order for the following item(s).%0A%0A" +
-"Please confirm availability, pricing, and delivery timeline at your earliest convenience.%0A%0A" +
-"Order Details:%0A%0A";
+    let msg = "Hello Jaguar Medical Team,%0A%0AOrder:%0A";
 
     cart.forEach((c,i)=>{
-        message += `${i+1}. ${c.name} × ${c.qty}%0A`;
+        msg += `${i+1}. ${c.name} × ${c.qty}%0A`;
     });
 
-    message += "%0AThank you.";
+    window.open("https://wa.me/916301065447?text=" + msg);
+}
 
-    let url = "https://wa.me/919441430014?text=" + message;
-
-    window.open(url, "_blank");
-
+/* MENU */
+function toggleMenu() {
+    document.getElementById("menu").classList.toggle("open");
+}
 
 </script>
 
