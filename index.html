@@ -32,13 +32,35 @@ nav {
     z-index: 1000;
 }
 
-nav h2 {
-    font-weight: 600;
+/* 🔥 NEW LOGO SYSTEM (MATCHED TO IMAGE) */
+.logo-box {
+    display: inline-block;
+    border: 2px solid #2ecc71;
+    padding: 6px 10px;
+    border-radius: 6px;
+    line-height: 1.1;
 }
 
-.contact-top {
-    font-size: 12px;
-    text-align: right;
+.logo-main {
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: baseline;
+}
+
+.logo-j { color: #111; }   /* black J */
+.logo-m { color: #111; }      /* black M */
+.logo-e { color: #27ae60; }   /* green E */
+.logo-plus { color: #2e00fa; font-size: 14px; margin-left: 2px; }
+
+.logo-sub {
+    font-size: 11px;
+    text-align: center;
+    font-weight: 600;
+    color: #111;
+    letter-spacing: 1px;
+    margin-top: 2px;
 }
 
 /* MENU */
@@ -163,9 +185,20 @@ footer {
 
 <!-- NAV -->
 <nav>
-<h2>JAGUAR MEDICAL</h2>
+
+<!-- 🔥 LOGO -->
+<div class="logo-box">
+    <div class="logo-main">
+        <span class="logo-j">J</span>
+        <span class="logo-m">M</span>
+        <span class="logo-e">E</span>
+        <span class="logo-plus">+</span>
+    </div>
+    <div class="logo-sub">SALES & SERVICE</div>
+</div>
 
 <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
 </nav>
 
 <!-- SIDE MENU -->
@@ -258,35 +291,24 @@ WhatsApp Chat
 
 let cart = [];
 
-/* ADD */
 function addToCart(item) {
     let existing = cart.find(c => c.name === item);
-
-    if(existing){
-        existing.qty++;
-    } else {
-        cart.push({name:item, qty:1});
-    }
-
+    if(existing){ existing.qty++; }
+    else { cart.push({name:item, qty:1}); }
     updateCart();
 }
 
-/* REMOVE */
 function removeFromCart(item) {
     let existing = cart.find(c => c.name === item);
-
     if(existing){
         existing.qty--;
-
         if(existing.qty <= 0){
             cart = cart.filter(c => c.name !== item);
         }
     }
-
     updateCart();
 }
 
-/* UPDATE UI */
 function updateCart() {
     let cartList = document.getElementById("cartList");
 
@@ -300,9 +322,7 @@ function updateCart() {
     ).join("<br>");
 }
 
-/* WHATSAPP */
 function sendCart() {
-
     if(cart.length === 0){
         alert("Cart is empty!");
         return;
@@ -317,7 +337,6 @@ function sendCart() {
     window.open("https://wa.me/916301065447?text=" + msg);
 }
 
-/* MENU */
 function toggleMenu() {
     document.getElementById("menu").classList.toggle("open");
 }
