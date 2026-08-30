@@ -4,78 +4,107 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>JAGUAR MEDICAL EQUIPMENTS</title>
+<title>Medical Equipment Supplier in Hyderabad | Jaguar Medical Equipments</title>
 
+<!-- 🔥 SEO DOMINATION -->
+<meta name="description" content="Jaguar Medical Equipments - Leading Medical Equipment Supplier in Hyderabad, Telangana & Andhra Pradesh. BiPAP, Oxygen Concentrator, Hospital Beds, ICU Devices with WhatsApp order support.">
+
+<meta name="keywords" content="
+medical equipment Hyderabad,
+oxygen concentrator Hyderabad,
+BIPAP machine Telangana,
+hospital equipment Andhra Pradesh,
+ICU equipment supplier Hyderabad,
+medical devices Telangana,
+hospital bed Hyderabad,
+Jaguar Medical Equipments
+">
+
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://jaguarmedical.github.io/jme/">
+
+<!-- 🔥 SOCIAL PREVIEW -->
+<meta property="og:title" content="Medical Equipment Supplier Hyderabad | Jaguar Medical Equipments">
+<meta property="og:description" content="ICU, Oxygen, BiPAP, Hospital Equipment Supply in Telangana & Andhra Pradesh">
 <meta property="og:image" content="https://jaguarmedical.github.io/jme/images/logo.png">
-<link rel="icon" href="images/logo.png" type="image/png">
+<meta property="og:type" content="website">
 
+<link rel="icon" href="images/logo.png">
+
+<!-- 🔥 LOCAL SEO SCHEMA -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": "LocalBusiness",
   "name": "Jaguar Medical Equipments",
+  "image": "https://jaguarmedical.github.io/jme/images/logo.png",
   "url": "https://jaguarmedical.github.io/jme/",
-  "logo": "https://jaguarmedical.github.io/jme/images/logo.png"
+  "telephone": "+91-6301065447",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Hyderabad",
+    "addressRegion": "Telangana",
+    "addressCountry": "IN"
+  },
+  "areaServed": ["Hyderabad","Telangana","Andhra Pradesh"],
+  "description": "Medical equipment supplier specializing in ICU, oxygen therapy and hospital equipment."
 }
 </script>
 
 <style>
+/* ================= GLOBAL ================= */
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
     font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
+    user-select:none; /* disable copy */
 }
 
 body{
-    background:#fff;
+    background:#f6f7fb;
     color:#111;
+    overflow-x:hidden;
 }
 
-/* ================= NAV (NAME LEFT ONLY) ================= */
+html{
+    font-size:clamp(14px,0.4vw+12px,18px);
+}
+
+/* ================= NAV ================= */
 nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:15px 25px;
-    position:sticky;
-    top:0;
+    padding:14px 2vw;
     background:#fff;
-    border-bottom:1px solid #eee;
-    z-index:1000;
+    box-shadow:0 2px 10px rgba(0,0,0,0.06);
 }
 
 nav h3{
-    font-size:20px;
+    font-size:1.1rem;
     font-weight:800;
-    letter-spacing:1px;
 }
 
-/* MENU ICON */
 .menu-icon{
-    font-size:26px;
+    font-size:1.4rem;
     cursor:pointer;
-    padding:6px 10px;
-    border-radius:8px;
-    transition:0.3s;
 }
 
-.menu-icon:hover{
-    background:#f2f2f2;
-}
-
-/* ================= SIDE MENU (BLACK PREMIUM) ================= */
+/* ================= SIDE MENU ================= */
 .side-menu{
     position:fixed;
     top:0;
-    right:-260px;
-    width:260px;
+    right:-280px;
+    width:280px;
     height:100%;
-    background:#0a0a0a;
+    background:#0b0b0b;
     color:#fff;
     padding:40px 25px;
-    transition:0.35s ease;
-    box-shadow:-10px 0 30px rgba(0,0,0,0.25);
+    transition:0.3s;
 }
 
 .side-menu a{
@@ -83,62 +112,41 @@ nav h3{
     margin:18px 0;
     color:#fff;
     text-decoration:none;
-    font-size:16px;
-    opacity:0.85;
-    transition:0.2s;
 }
 
-.side-menu a:hover{
-    opacity:1;
-    transform:translateX(6px);
-}
+.side-menu.open{ right:0; }
 
-.side-menu.open{
-    right:0;
-}
-
-/* ================= HERO ================= */
+/* ================= HERO APP STYLE ================= */
 .hero{
-    height:70vh;
+    margin:1rem;
+    padding:1.2rem;
+    background:#fff;
+    border-radius:18px;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:0 70px;
-    background:linear-gradient(to bottom,#f8fafc,#ffffff);
-}
-
-/* LEFT TEXT */
-.hero-left{
-    flex:1;
+    box-shadow:0 10px 25px rgba(0,0,0,0.05);
 }
 
 .hero-left h1{
-    font-size:44px;
+    font-size:clamp(1rem,2vw,2.2rem);
     font-weight:900;
-    line-height:1.2;
 }
 
 .hero-left p{
-    font-size:18px;
-    margin-top:10px;
-    color:#555;
+    font-size:0.9rem;
+    color:#666;
+    margin-top:6px;
 }
 
-/* RIGHT LOGO */
-.hero-right{
-    flex:1;
-    display:flex;
-    justify-content:center;
-}
-
+/* LOGO */
 .circle-img-container{
-    width:230px;
-    height:230px;
+    width:clamp(70px,10vw,140px);
+    height:clamp(70px,10vw,140px);
     border-radius:50%;
     overflow:hidden;
-    border:5px solid #22c55e;
-    box-shadow:0 20px 40px rgba(0,0,0,0.15);
-    animation:float 3s ease-in-out infinite;
+    border:4px solid #22c55e;
+    animation:float 3s infinite ease-in-out;
 }
 
 .circle-img-container img{
@@ -149,116 +157,99 @@ nav h3{
 
 @keyframes float{
     0%{transform:translateY(0)}
-    50%{transform:translateY(-12px)}
+    50%{transform:translateY(-10px)}
     100%{transform:translateY(0)}
 }
 
 /* ================= PRODUCTS ================= */
-.section{
-    padding:60px;
-}
+.section{ padding:1rem 2vw 6rem; }
 
 .products{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:20px;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:1rem;
 }
 
 .card{
+    background:#fff;
     border-radius:16px;
-    padding:15px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.06);
+    padding:1rem;
+    box-shadow:0 8px 20px rgba(0,0,0,0.05);
 }
 
 .card img{
     width:100%;
-    height:170px;
-    object-fit:cover;
+    height:160px;
     border-radius:12px;
+    object-fit:cover;
 }
+
+.card h3{ font-size:1rem; }
+.card p{ font-size:0.85rem; color:#666; }
 
 .btn{
+    margin-top:8px;
     padding:8px 12px;
     border:none;
-    border-radius:8px;
+    border-radius:10px;
     cursor:pointer;
-    margin-top:8px;
 }
 
-.add{background:#111;color:#fff;}
-.remove{background:#ef4444;color:#fff;}
+.add{ background:#111; color:#fff; }
+.remove{ background:#ef4444; color:#fff; }
 
 /* ================= CART ================= */
 .cart-box{
     position:fixed;
-    right:20px;
-    bottom:20px;
-    width:280px;
+    right:1rem;
+    bottom:4.5rem;
+    width:260px;
     background:#111;
     color:#fff;
-    padding:15px;
-    border-radius:14px;
-    box-shadow:0 15px 30px rgba(0,0,0,0.25);
-}
-
-.cart-btn{
-    width:100%;
-    margin-top:12px;
     padding:12px;
-    border:none;
-    border-radius:10px;
+    border-radius:14px;
+    font-size:0.85rem;
+}
+
+/* ================= WHATSAPP ================= */
+.bottom-bar{
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
     background:linear-gradient(135deg,#25D366,#128C7E);
-    color:#fff;
-    font-weight:600;
-    cursor:pointer;
-    transition:0.3s;
-}
-
-.cart-btn:hover{
-    transform:scale(1.05);
-}
-
-/* ================= CONTACT ================= */
-.contact{
-    background:#f8fafc;
-}
-
-/* ================= FOOTER ================= */
-footer{
+    padding:14px;
     text-align:center;
-    padding:30px;
-    color:#888;
+    font-weight:700;
+    color:#fff;
+    cursor:pointer;
 }
 
-/* ================= MOBILE ================= */
-@media(max-width:768px){
-    .hero{
-        flex-direction:column;
-        text-align:center;
-        padding:30px;
-        height:auto;
-    }
+/* ================= RESPONSIVE ================= */
+@media (min-width:768px){
+    .products{ grid-template-columns:repeat(2,1fr); }
+}
 
-    .hero-left h1{
-        font-size:30px;
-    }
+@media (min-width:1024px){
+    .products{ grid-template-columns:repeat(3,1fr); }
+}
 
-    .section{
-        padding:30px;
-    }
+@media (min-width:1600px){
+    body{ max-width:1400px; margin:auto; }
+    .products{ grid-template-columns:repeat(4,1fr); }
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAV (NAME ONLY LEFT) -->
+<!-- NAV -->
 <nav>
     <h3>JAGUAR MEDICAL EQUIPMENTS</h3>
     <div class="menu-icon" onclick="toggleMenu()">☰</div>
 </nav>
 
-<!-- SIDE MENU -->
+<!-- MENU -->
 <div class="side-menu" id="menu">
     <a href="#products" onclick="toggleMenu()">Products</a>
     <a href="#contact" onclick="toggleMenu()">Contact</a>
@@ -266,111 +257,95 @@ footer{
 
 <!-- HERO -->
 <section class="hero">
-
     <div class="hero-left">
-        <h1>Medical Equipment Supply in Telangana & Andhra Pradesh</h1>
-        <p>Hospital Grade Devices • Direct Supply • Trusted Service</p>
+        <h1>Medical Equipment Supplier Hyderabad</h1>
+        <p>Telangana • Andhra Pradesh • ICU & Oxygen Systems</p>
     </div>
 
-    <div class="hero-right">
-        <div class="circle-img-container">
-            <img src="images/logo.png" alt="Jaguar Medical Equipments">
-        </div>
+    <div class="circle-img-container">
+        <img src="images/logo.png">
     </div>
-
 </section>
 
 <!-- PRODUCTS -->
 <section class="section" id="products">
-<h2>Products</h2>
 
 <div class="products">
 
 <div class="card">
 <img src="https://source.unsplash.com/300x200/?ventilator">
 <h3>BIPAP Machine</h3>
-<p>ICU respiratory support</p>
-<button class="btn add" onclick="addToCart('BIPAP Machine')">+</button>
-<button class="btn remove" onclick="removeFromCart('BIPAP Machine')">−</button>
+<p>ICU Respiratory Support</p>
+<button class="btn add" onclick="addToCart('BIPAP')">Add</button>
+<button class="btn remove" onclick="removeFromCart('BIPAP')">Remove</button>
 </div>
 
 <div class="card">
 <img src="https://source.unsplash.com/300x200/?oxygen">
 <h3>Oxygen Concentrator</h3>
-<p>Medical oxygen supply</p>
-<button class="btn add" onclick="addToCart('Oxygen Concentrator')">+</button>
-<button class="btn remove" onclick="removeFromCart('Oxygen Concentrator')">−</button>
+<p>Medical Oxygen System</p>
+<button class="btn add" onclick="addToCart('Oxygen')">Add</button>
+<button class="btn remove" onclick="removeFromCart('Oxygen')">Remove</button>
 </div>
 
 </div>
 </section>
 
-<!-- CART (WHATSAPP ONLY HERE) -->
+<!-- CART -->
 <div class="cart-box">
-<h3>🛒 Cart</h3>
-<div id="cartList">No items</div>
-
-<button class="cart-btn" onclick="sendCart()">
-Order via WhatsApp
-</button>
+<h3>Cart</h3>
+<div id="cartList">Empty</div>
 </div>
 
-<!-- FOOTER -->
-<footer>
-© 2026 JAGUAR MEDICAL EQUIPMENTS
-</footer>
+<!-- WHATSAPP -->
+<div class="bottom-bar" onclick="sendCart()">
+🟢 Order via WhatsApp
+</div>
 
 <script>
-let cart = [];
+let cart=[];
 
-function addToCart(item){
-    let found = cart.find(c => c.name === item);
-    if(found) found.qty++;
-    else cart.push({name:item, qty:1});
-    updateCart();
+function addToCart(i){
+    let f=cart.find(c=>c.name===i);
+    if(f) f.qty++;
+    else cart.push({name:i,qty:1});
+    update();
 }
 
-function removeFromCart(item){
-    let found = cart.find(c => c.name === item);
-    if(found){
-        found.qty--;
-        if(found.qty<=0){
-            cart = cart.filter(c => c.name !== item);
-        }
+function removeFromCart(i){
+    let f=cart.find(c=>c.name===i);
+    if(f){
+        f.qty--;
+        if(f.qty<=0) cart=cart.filter(c=>c.name!==i);
     }
-    updateCart();
+    update();
 }
 
-function updateCart(){
-    let box = document.getElementById("cartList");
+function update(){
+    let box=document.getElementById("cartList");
+    if(cart.length===0) return box.innerHTML="Empty";
 
-    if(cart.length===0){
-        box.innerHTML="No items";
-        return;
-    }
-
-    box.innerHTML = cart.map((c,i)=>
-        `${i+1}. ${c.name} × ${c.qty}`
-    ).join("<br>");
+    box.innerHTML=cart.map((c,i)=>`${i+1}. ${c.name} × ${c.qty}`).join("<br>");
 }
 
 function sendCart(){
-    if(cart.length===0){
-        alert("Cart empty!");
-        return;
-    }
-
     let msg="Order:%0A";
     cart.forEach((c,i)=>{
-        msg += `${i+1}. ${c.name} × ${c.qty}%0A`;
+        msg+=`${i+1}. ${c.name} × ${c.qty}%0A`;
     });
-
     window.open("https://wa.me/916301065447?text="+msg);
 }
 
 function toggleMenu(){
     document.getElementById("menu").classList.toggle("open");
 }
+
+/* 🔥 BASIC PROTECTION */
+document.addEventListener("contextmenu",e=>e.preventDefault());
+document.addEventListener("keydown",e=>{
+    if(e.ctrlKey && ["u","s","c"].includes(e.key)) e.preventDefault();
+    if(e.key==="F12") e.preventDefault();
+});
 </script>
 
 </body>
