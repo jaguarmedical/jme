@@ -182,6 +182,29 @@ body{
     user-select:none;
 }
 
+/* 🌗 DARK MODE */
+.dark body{
+    background:#0f172a;
+    color:#fff;
+}
+
+.dark nav{
+    background:#111;
+}
+
+.dark .card{
+    background:#1e293b;
+    color:#fff;
+}
+
+.dark .hero{
+    background:#1e293b;
+}
+
+.dark .cart-box{
+    background:#000;
+}
+
 </style>
 </head>
 
@@ -190,7 +213,24 @@ body{
 <!-- NAV -->
 <nav>
     <h3>JAGUAR MEDICAL EQUIPMENTS</h3>
-    <div class="menu-icon">☰</div>
+   <div style="display:flex; align-items:center; gap:10px;">
+
+    <button onclick="toggleTheme()" 
+    style="
+        padding:6px 12px;
+        border:none;
+        border-radius:20px;
+        font-size:0.8rem;
+        cursor:pointer;
+        background:linear-gradient(135deg,#111,#333);
+        color:#fff;
+        box-shadow:0 2px 8px rgba(0,0,0,0.2);
+        transition:0.3s;
+    ">
+    🌙
+    </button>
+
+</div>
 </nav>
 
 <!-- HERO -->
@@ -522,6 +562,17 @@ document.addEventListener("keydown",e=>{
     if(e.key==="F12") e.preventDefault();
 });
 
+function toggleTheme(){
+    document.documentElement.classList.toggle("dark");
+
+    let btn = document.querySelector("nav button");
+    if(document.documentElement.classList.contains("dark")){
+        btn.innerHTML = "☀️";
+    } else {
+        btn.innerHTML = "🌙";
+    }
+}
+    
 </script>
 
 </body>
