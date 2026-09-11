@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Jaguar Medical Equipment | Hospital Equipment, CSSD & Sterilization Infrastructure</title>
   <meta name="description" content="Jaguar Medical Equipment supplies medical-grade CSSD equipment, ETO sterilizers, autoclaves, biological indicators, sterilization reels, and wraps across Telangana and Andhra Pradesh.">
   <meta name="keywords" content="Jaguar Medical Equipment, ETO cartridges 40g 100g 170g, steam sterilizer machine, autoclave AP TS, CSSD documentation gun, biological indicators, sterilization reels, wrap sheets, hospital equipment AMC Hyderabad Vijayawada">
@@ -11,6 +11,17 @@
   <link rel="canonical" href="https://jaguar-medical-equipment.github.io/jme/">
 
   <meta name="google-site-verification" content="f3c47ffb6bfcc7dd">
+
+  <!-- PWA & Mobile Web App Capabilities -->
+  <meta name="theme-color" content="#047857">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Jaguar Medical">
+  <link rel="apple-touch-icon" href="images/icon-192.png">
+
+  <!-- Embedded Web App Manifest -->
+  <link rel="manifest" href="data:application/manifest+json;utf-8,%7B%22name%22%3A%22Jaguar%20Medical%20Equipment%22%2C%22short_name%22%3A%22Jaguar%20Med%22%2C%22start_url%22%3A%22.%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%23f6f8f7%22%2C%22theme_color%22%3A%22%23047857%22%2C%22icons%22%3A%5B%7B%22src%22%3A%22images%2Ficon-192.png%22%2C%22sizes%22%3A%22192x192%22%2C%22type%22%3A%22image%2Fpng%22%7D%2C%7B%22src%22%3A%22images%2Ficon-512.png%22%2C%22sizes%22%3A%22512x512%22%2C%22type%22%3A%22image%2Fpng%22%7D%5D%7D">
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://jaguar-medical-equipment.github.io/jme/">
@@ -148,7 +159,7 @@
       user-select: none;
       -webkit-user-select: none;
       overflow-x: hidden;
-      padding-bottom: 72px;
+      padding-bottom: 0px;
     }
 
     .trust-strip {
@@ -210,7 +221,23 @@
     .nav-actions {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
+    }
+
+    /* PWA Install Button */
+    .install-pwa-btn {
+      background: var(--accent);
+      color: #042f1f;
+      border: none;
+      border-radius: 8px;
+      padding: 7px 14px;
+      cursor: pointer;
+      font-size: 0.8rem;
+      font-weight: 700;
+      display: none;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 2px 8px var(--accent-glow);
     }
 
     .theme-toggle {
@@ -683,6 +710,66 @@
       min-height: 54px;
     }
 
+    /* PWA Install Banner Notice */
+    .app-install-banner {
+      display: none;
+      position: fixed;
+      bottom: 74px;
+      left: 14px;
+      right: 14px;
+      background: var(--card-bg);
+      border: 1.5px solid var(--primary);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+      border-radius: var(--radius);
+      padding: 12px 16px;
+      z-index: 2000;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      animation: slideUp 0.3s ease;
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .app-install-banner .banner-text {
+      font-size: 0.82rem;
+      line-height: 1.35;
+    }
+
+    .app-install-banner .banner-text strong {
+      color: var(--primary);
+      display: block;
+    }
+
+    .banner-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .banner-install-btn {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 7px 12px;
+      border-radius: 6px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .banner-close-btn {
+      background: transparent;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: var(--text-muted);
+      padding: 4px;
+    }
+
     .mobile-bar {
       position: fixed;
       bottom: 0;
@@ -693,7 +780,7 @@
       backdrop-filter: var(--blur);
       -webkit-backdrop-filter: var(--blur);
       border-top: 1px solid var(--glass-border);
-      display: flex;
+      display: none;
       justify-content: space-around;
       align-items: center;
       z-index: 1001;
@@ -731,11 +818,96 @@
       border: 1px solid #10b981;
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
     }
+
+    /* ========================================================
+       RESPONSIVE ENHANCEMENTS FOR DESKTOP, TABLET & MOBILE
+       ======================================================== */
+
+    /* Small Mobile Phones (< 600px) */
+    @media (max-width: 600px) {
+      body {
+        padding-bottom: 74px;
+      }
+      .mobile-bar {
+        display: flex;
+      }
+      .trust-strip {
+        font-size: 0.72rem;
+        flex-direction: column;
+        gap: 4px;
+        text-align: center;
+      }
+      .brand {
+        font-size: 1.1rem;
+      }
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+      .specs-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .cart-btn-header {
+        display: none;
+      }
+    }
+
+    /* Tablets & Small Laptops (601px to 1024px) */
+    @media (min-width: 601px) and (max-width: 1024px) {
+      body {
+        padding-bottom: 0px;
+      }
+      .mobile-bar {
+        display: none;
+      }
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .specs-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .app-install-banner {
+        max-width: 500px;
+        left: auto;
+        right: 20px;
+        bottom: 20px;
+      }
+    }
+
+    /* Desktop Screens (> 1024px) */
+    @media (min-width: 1025px) {
+      body {
+        padding-bottom: 0px;
+      }
+      .mobile-bar {
+        display: none;
+      }
+      .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      }
+      .app-install-banner {
+        max-width: 440px;
+        left: auto;
+        right: 24px;
+        bottom: 24px;
+      }
+    }
   </style>
 </head>
 <body oncontextmenu="return false;">
 
   <div id="security-warning">Institutional copy protected. Contact administration for brochures.</div>
+
+  <!-- Install App Prompt Banner -->
+  <div class="app-install-banner" id="pwa-banner">
+    <div class="banner-text">
+      <strong>Install Jaguar Medical Portal</strong>
+      <span id="banner-subtext">Add to your Home Screen for one-touch ordering.</span>
+    </div>
+    <div class="banner-actions">
+      <button class="banner-install-btn" onclick="triggerPWAInstall()">Install</button>
+      <button class="banner-close-btn" onclick="dismissPWABanner()" aria-label="Dismiss banner">&times;</button>
+    </div>
+  </div>
 
   <div class="trust-strip">
     <span>Service Network: Telangana | Andhra Pradesh</span>
@@ -749,6 +921,10 @@
         Jaguar Medical Equipment
       </div>
       <div class="nav-actions">
+        <!-- Install App Header Button -->
+        <button class="install-pwa-btn" id="install-header-btn" onclick="triggerPWAInstall()">
+          📲 Install App
+        </button>
         <button class="cart-btn-header" onclick="toggleCart(true)">
           🛒 Procurement Cart
           <span class="cart-count-badge" id="cart-count">0</span>
@@ -857,6 +1033,10 @@
     <button onclick="toggleCart(true)">
       <span>🛒</span>
       Cart (<span id="mobile-cart-count">0</span>)
+    </button>
+    <button id="mobile-install-btn" onclick="triggerPWAInstall()" style="display: none;">
+      <span>📲</span>
+      Install
     </button>
     <a href="https://wa.me/916301065447?text=Procurement%20Enquiry:%20Jaguar%20Medical%20Equipment">
       <span>💬</span>
@@ -1044,8 +1224,8 @@
             <img 
               src="${item.img}" 
               alt="${item.name}" 
-              class="product-thumb"
-              loading="lazy"
+              class="product-thumb" 
+              loading="lazy" 
               onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
             >
             <span class="fallback-text">${item.name}</span>
@@ -1118,6 +1298,82 @@
     document.addEventListener('dragstart', e => {
       if (e.target.nodeName === 'IMG') e.preventDefault();
     });
+
+    /* ========================================================
+       PWA INSTALLATION LOGIC (All Modern Browsers & iOS)
+       ======================================================== */
+    let deferredPrompt = null;
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      
+      // Reveal prompt trigger buttons
+      const banner = document.getElementById('pwa-banner');
+      const headerBtn = document.getElementById('install-header-btn');
+      const mobileBtn = document.getElementById('mobile-install-btn');
+      
+      if (banner) banner.style.display = 'flex';
+      if (headerBtn) headerBtn.style.display = 'inline-flex';
+      if (mobileBtn) mobileBtn.style.display = 'flex';
+    });
+
+    function triggerPWAInstall() {
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then((choiceResult) => {
+          if (choiceResult.outcome === 'accepted') {
+            dismissPWABanner();
+          }
+          deferredPrompt = null;
+        });
+      } else {
+        // Fallback instructions for iOS Safari or other desktop browsers
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        if (isIOS) {
+          alert("To install this app on iOS:\n1. Tap the Share button in Safari (box with arrow up).\n2. Scroll down and tap 'Add to Home Screen'.");
+        } else {
+          alert("To install:\nTap your browser settings menu (⋮ or ...) and select 'Install App' or 'Add to Home Screen'.");
+        }
+      }
+    }
+
+    function dismissPWABanner() {
+      const banner = document.getElementById('pwa-banner');
+      if (banner) banner.style.display = 'none';
+    }
+
+    window.addEventListener('appinstalled', () => {
+      dismissPWABanner();
+      const headerBtn = document.getElementById('install-header-btn');
+      const mobileBtn = document.getElementById('mobile-install-btn');
+      if (headerBtn) headerBtn.style.display = 'none';
+      if (mobileBtn) mobileBtn.style.display = 'none';
+      deferredPrompt = null;
+    });
+
+    // In-memory Service Worker registration for PWA install qualification
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        const swContent = `
+          const CACHE = 'jaguar-v1';
+          self.addEventListener('install', (e) => {
+            self.skipWaiting();
+          });
+          self.addEventListener('activate', (e) => {
+            e.waitUntil(self.clients.claim());
+          });
+          self.addEventListener('fetch', (e) => {
+            e.respondWith(fetch(e.request).catch(() => caches.match(e.request)));
+          });
+        `;
+        const blob = new Blob([swContent], { type: 'application/javascript' });
+        const swUrl = URL.createObjectURL(blob);
+        navigator.serviceWorker.register(swUrl).catch(() => {
+          // Fallback if local blob SW is restricted
+        });
+      });
+    }
 
     renderCatalog(catalog);
     updateCartBadge();
